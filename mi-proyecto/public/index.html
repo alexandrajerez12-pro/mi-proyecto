@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Mi App en Hostinger</title></head>
+<body>
+    <h1>Bienvenido a mi App</h1>
+    <button onclick="llamarAPI()">Saludar al Backend</button>
+    <p id="respuesta"></p>
+
+    <script>
+        async function llamarAPI() {
+            const res = await fetch('/api/saludo');
+            const data = await res.json();
+            document.getElementById('respuesta').innerText = data.mensaje;
+        }
+    </script>
+</body>
+</html>
